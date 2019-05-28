@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>函数节流</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name=" renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <link rel="stylesheet" href="css/mbui.min.css">
+  <!-- build:css css/site.min.css -->
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/page.css">
+  <!-- endbuild -->
+</head>
+
+<body>
+  <header class="mbui-header">
+    <div class="mbui-header-left" onclick="javascript:history.back();">
+      <i class="mbui-icon-v-left mbui-header-icon"></i>
+    </div>
+    <h1 class="page-tt">函数节流</h1>
+  </header>
+  <!-- 头部 -->
+
+  <main id="pages" class="mbui-page-wrap">
+    <div class="mbui-page">
+      <div class="throttle-test">
+        函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流
+        函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流
+        函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流
+        函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流
+        函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流
+        函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流
+        函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流
+        函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流
+        函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流
+        函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流
+        函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流
+        函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流
+        函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流
+        函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流
+        函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流
+        函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流
+        函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流
+        函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流
+        函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流
+        函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流
+        函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流函数节流
+      </div>
+    </div>
+    <!-- end .page -->
+  </main>
+  <!-- end .page-wrap -->
+  <script src="js/lib/jquery-2.2.3.min.js"></script>
+  <script src="https://at.alicdn.com/t/font_284017_b3x9plsuag6.js"></script>
+  <script src="js/mbui.min.js"></script>
+  <script>
+    let obj = document.querySelector('.throttle-test');
+    let _count = 0;
+    let _canRun = true;
+    obj.onscroll = function () {
+      if (!_canRun) {
+        return false;
+      }
+      _canRun = false;
+      setTimeout(function () {
+        _count++;
+        console.log(_count);
+        _canRun = true;
+      }, 2000);
+    }    
+  </script>
+</body>
+
+</html>
