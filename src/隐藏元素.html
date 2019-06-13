@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>隐藏元素</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name=" renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <link rel="stylesheet" href="css/mbui.min.css">
+  <!-- build:css css/site.min.css -->
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/page.css">
+  <!-- endbuild -->
+</head>
+
+<body class="mbui-pd-20">
+  <header class="mbui-header">
+    <div class="mbui-header-left" onclick="javascript:history.back();">
+      <i class="mbui-icon-v-left mbui-header-icon"></i>
+    </div>
+    <h1 class="page-tt">隐藏元素</h1>
+  </header>
+  <!-- 头部 -->
+
+  <main id="pages" class="mbui-page-wrap">
+    <div class="mbui-page">
+      <div>
+        <h3 class="mbui-fs-18 mbui-fw-700 mbui-ptb-10">1.使用opacity</h3>
+        <div class="hide-ele hide-opacity">
+          我是被隐藏的元素
+          <p class="hide-ele__child">我是被隐藏元素的子元素</p>
+        </div>
+        <p class="mbui-color-danger hide-click mbui-fs-18"></p>
+        <p>我的上面有一个被隐藏的元素</p>
+      </div>
+
+      <div>
+        <h3 class="mbui-fs-18 mbui-fw-700 mbui-ptb-10">2.使用visibility</h3>
+        <div class="hide-ele hide-visibility">
+          我是被隐藏的元素
+          <p class="hide-ele__child">我是被隐藏元素的子元素</p>
+        </div>
+        <p>我的上面有一个被隐藏的元素</p>
+      </div>
+
+      <div>
+        <h3 class="mbui-fs-18 mbui-fw-700 mbui-ptb-10">3.使用display</h3>
+        <div class="hide-ele hide-display">
+          我是被隐藏的元素
+          <p class="hide-ele__child">我是被隐藏元素的子元素</p>
+        </div>
+        <p>我的上面有一个被隐藏的元素</p>
+      </div>
+
+      <div>
+        <h3 class="mbui-fs-18 mbui-fw-700 mbui-ptb-10">4.使用position</h3>
+        <div class="hide-ele hide-position">
+          我是被隐藏的元素
+          <p class="hide-ele__child">我是被隐藏元素的子元素</p>
+        </div>
+        <p>我的上面有一个被隐藏的元素</p>
+      </div>
+
+      <div>
+        <h3 class="mbui-fs-18 mbui-fw-700 mbui-ptb-10">5.使用clip-path</h3>
+        <div class="hide-ele hide-clip">
+          我是被隐藏的元素
+          <p class="hide-ele__child">我是被隐藏元素的子元素</p>
+        </div>
+        <p>我的上面有一个被隐藏的元素</p>
+      </div>
+
+      <div>
+        <h3 class="mbui-fs-18 mbui-fw-700 mbui-ptb-10">6.使用overflow</h3>
+        <div class="hide-ele hide-overflow">
+          我是被隐藏的元素
+          <p class="hide-ele__child">我是被隐藏元素的子元素</p>
+        </div>
+        <p>我的上面有一个被隐藏的元素</p>
+      </div>
+
+      <div>
+        <h3 class="mbui-fs-18 mbui-fw-700 mbui-ptb-10">7.transorm</h3>
+        <div class="hide-ele hide-transform">
+          我是被隐藏的元素
+          <p class="hide-ele__child">我是被隐藏元素的子元素</p>
+        </div>
+        <p>我的上面有一个被隐藏的元素</p>
+      </div>
+
+      <div>
+        <h3 class="mbui-fs-18 mbui-fw-700 mbui-ptb-10">8.hidden</h3>
+        <div class="hide-ele" hidden>
+          我是被隐藏的元素
+          <p class="hide-ele__child">我是被隐藏元素的子元素</p>
+        </div>
+        <p>我的上面有一个被隐藏的元素</p>
+        <a class="mbui-btn mbui-btn-primary" href="javascript:;">显示hidden元素</a>
+      </div>
+    </div>
+    <!-- end .page -->
+  </main>
+  <!-- end .page-wrap -->
+
+  <script>
+    var hideEle = document.querySelector('.hide-ele');
+    console.log(hideEle.style.outerHeight);
+    hideEle.onclick = function () {
+      var hideClick = document.querySelector('.hide-click');
+      hideClick.textContent = '隐藏的元素被点击了';
+    }
+
+    document.querySelector('.mbui-btn').onclick = function () {
+      hideEle.removeAttribute('hidden');
+    }
+  </script>
+
+</body>
+
+</html>

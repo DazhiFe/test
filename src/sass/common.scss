@@ -4,3 +4,80 @@ $primary: #1bb440;
 $colorBorder: #e5e5e5;
 
 @import "d:/wamp/www/mobile-docs/src/sass/sandal/function";
+
+body {
+  background: #fff;
+}
+
+.icon-container {
+  color: yellow;
+}
+
+.icon-wx {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-image: url("../images/icon-wx-gray.jpg");
+  background-repeat: no-repeat;
+  background-size: 100px auto;
+}
+
+.hide-ele {
+  width: 200px;
+  height: 200px;
+  background: red;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &__child {
+    background: yellow;
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.hide-opacity {
+  opacity: 0;
+}
+
+.hide-visibility {
+  visibility: hidden;
+}
+
+.hide-display {
+  display: none;
+}
+
+.hide-position {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+.hide-clip {
+  clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+}
+
+.hide-overflow {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.hide-transform {
+  transform: translate(-9999px, -9999px);
+  // transform: scale(0);
+}
+
+.hide-zIndex {
+  position: relative;
+  z-index: -1;
+}
+
+.hide-margin {
+  margin: -9999px 0 0 -9999px;
+}

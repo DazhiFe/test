@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>类数组对象</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name=" renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <link rel="stylesheet" href="css/mbui.min.css">
+  <!-- build:css css/site.min.css -->
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/page.css">
+  <!-- endbuild -->
+</head>
+
+<body>
+  <header class="mbui-header">
+    <div class="mbui-header-left" onclick="javascript:history.back();">
+      <i class="mbui-icon-v-left mbui-header-icon"></i>
+    </div>
+    <h1 class="page-tt">类数组对象</h1>
+  </header>
+  <!-- 头部 -->
+
+  <main id="pages" class="mbui-page-wrap">
+    <div class="mbui-page">
+
+    </div>
+    <!-- end .page -->
+  </main>
+  <!-- end .page-wrap -->
+
+  <script>
+    // let arr = {
+    //   0: 'dazhi'
+    // }
+    // console.log(arr[0]);
+    // console.log(arr.length);
+
+    let arr = ['name', 'age', 'job'];
+
+    let arrLike = {
+      0: 'name',
+      1: 'age',
+      2: 'job'
+    }
+
+    console.log(arr[0]); // name
+    console.log(arrLike[0]); // name
+
+    arr[0] = 'new name';
+    arrLike[0] = 'new name';
+
+    console.log(arr[0]); // new name
+    console.log(arrLike[0]); // new name
+
+    console.log(arr.length); // 3
+    console.log(arrLike.length); // 3
+
+    for (let i = 0; i < arr.length; i++) {
+      console.log(arr[i]);
+    }
+
+    for (let i = 0; i < arrLike.length; i++) {
+      console.log(arrLike[i]);
+    }
+
+    arr.push('gender');
+
+    // arrLike.push('gender');
+
+    var arrLike2 = Array.prototype.slice.call(arrLike);
+
+    arrLike2.push('gender');
+
+    console.log(arrLike2[3]);
+
+    var arrLike3 = Array.from(arrLike);
+
+    arrLike3.push('gender');
+
+    console.log(arrLike3[3]);
+
+    var arrLike4 = Array.prototype.splice.call(arrLike, 0);
+
+    arrLike4.push('gender');
+
+    console.log(arrLike4[3]);
+
+    // var arrLike5 = Array.prototype.concat.apply([], arrLike);
+
+    // arrLike5.push('gender');
+
+    // console.log(arrLike5, arrLike5[3]);
+    // var arrLike5 = Array.prototype.map.call(arrLike, function (item) {
+    //   // return item.toUpperCase();
+    //   console.log(item);
+    // })
+
+    // console.log(arrLike5);
+
+    // function foo(a, b, c) {
+    //   console.log(arguments[0]);
+    //   console.log(arguments[1]);
+    //   console.log(arguments[2]);
+    // }
+
+    // foo(1);
+
+    // function foo(a, b, c) {
+    //   console.log('实参的个数：' + arguments.length);
+    // }
+
+    // foo(1);
+
+    // console.log('形参的个数为：' + foo.length);
+
+    function foo(a, b, c, d) {
+      // "use strict";
+      console.log(a, arguments[0]); // 1 1
+
+      // 改变形参
+      a = 11;
+
+      console.log(a, arguments[0]); // 11 11
+
+      // 改变arguments
+      arguments[1] = 22;
+
+      console.log(b, arguments[1]); // 22 22
+
+      // 未传入的参数
+      console.log(c); // undefined
+
+      c = 3;
+
+      console.log(c, arguments[2]); // 3 undefined
+
+      arguments[3] = 4;
+      console.log(d, arguments[3]); // undefined 4
+    }
+
+    foo(1, 2);
+
+  </script>
+</body>
+
+</html>
